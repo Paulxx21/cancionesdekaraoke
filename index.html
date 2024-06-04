@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecciona las canciones y subí a cantar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #800080; /* Cambio de color a púrpura */
+            margin: 0;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff; /* Cambio de color del texto a blanco */
+        }
+        .artist {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .artist h3 {
+            margin-top: 0;
+        }
+        .songs {
+            list-style: none;
+            padding: 0;
+            flex-grow: 1;
+        }
+        .songs li {
+            margin-bottom: 10px;
+        }
+        .artist img {
+            max-width: 200px;
+            max-height: 200px;
+            border-radius: 8px;
+            margin-left: 20px;
+        }
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .buttons .action {
+            background-color: #007BFF;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .buttons .action:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h2>Selecciona las canciones y subí a cantar</h2>
+    <form id="songForm">
+
+        <!-- AMAR AZUL -->
+        <div class="artist">
+            <div>
+                <h3>AMAR AZUL</h3>
+                <ul class="songs">
+                    <li><input type="radio" id="amarazul1" name="song" value="yo tomo licor" onclick="solicitarNombre('AMAR AZUL', 'yo tomo licor')"><label for="amarazul1"> yo tomo licor</label></li>
+                    <li><input type="radio" id="amarazul2" name="song" value="yo me enamore" onclick="solicitarNombre('AMAR AZUL', 'yo me enamore')"><label for="amarazul2"> yo me enamore</label></li>
+                </ul>
+            </div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBAyCvTm64Q0wzypFZYIKEtWjv4YBpOzQaKw&s" alt="Amar Azul">
+        </div>
+
+        <!-- AMERICO -->
+        <div class="artist">
+            <div>
+                <h3>AMERICO</h3>
+                <ul class="songs">
+                    <li><input type="radio" id="americo1" name="song" value="te vas" onclick="solicitarNombre('AMERICO', 'te vas')"><label for="americo1"> te vas</label></li>
+                    <li><input type="radio" id="americo2" name="song" value="embrujo" onclick="solicitarNombre('AMERICO', 'embrujo')"><label for="americo2"> embrujo</label></li>
+                </ul>
+            </div>
+            <img src="https://www.vgl.cl/wp-content/uploads/2015/10/foto-americo1.jpg" alt="Americo">
+        </div>
+
+        <!-- ANDREA BOCCELLI -->
+        <div class="artist">
+            <div>
+                <h3>ANDREA BOCCELLI</h3>
+                <ul class="songs">
+                    <li><input type="radio" id="andreabocelli1" name="song" value="vivo por ella" onclick="solicitarNombre('ANDREA BOCCELLI', 'vivo por ella')"><label for="andreabocelli1"> vivo por ella</label></li>
+                </ul>
+            </div>
+            <img src="https://www.musikholics.com/wp-content/uploads/2019/06/andrea-bocelli-HD-Wallpaper-1024x576.jpg" alt="Andrea Bocelli">
+        </div>
+
+        <!-- ANGELA LEIVA -->
+        <div class="artist">
+            <div>
+                <h3>ANGELA LEIVA</h3>
+                <ul class="songs">
+                    <li><input type="radio" id="angelaleiva1" name="song" value="amiga traidora" onclick="solicitarNombre('ANGELA LEIVA', 'amiga traidora')"><label for="angelaleiva1"> amiga traidora</label></li>
+                    <li><input type="radio" id="angelaleiva2" name="song" value="llamadas extrañas" onclick="solicitarNombre('ANGELA LEIVA', 'llamadas extrañas')"><label for="angelaleiva2"> llamadas extrañas</label></li>
+                </ul>
+            </div>
+            <img src="https://www.paparazzi.com.ar/wp-content/uploads/2021/06/Angela-Leiva-Lamothe-aper-1-1280x720.jpg" alt="Angela Leiva">
+        </div>
+
+        <!-- ANGELES AZULES -->
+        <div class="artist">
+            <div>
+                <h3>ANGELES AZULES</h3>
+                <ul class="songs">
+                    <li><input type="radio" id="angelesazules1" name="song" value="nunca es suficiente" onclick="solicitarNombre('ANGELES AZULES', 'nunca es suficiente')"><label for="angelesazules1"> nunca es suficiente</label></li>
+                    <li><input type="radio" id="angelesazules2" name="song" value="el amor de mi vida" onclick="solicitarNombre('ANGELES AZULES', 'el amor de mi vida')"><label for="angelesazules2"> el amor de mi vida</label></li>
+                    <li><input type="radio" id="angelesazules3" name="song" value="el liston de tu pelo" onclick="solicitarNombre('ANGELES AZULES', 'el liston de tu pelo')"><label for="angelesazules3"> el liston de tu pelo</label></li>
+                    <li><input type="radio" id="angelesazules4" name="song" value="como te voy a olvidar" onclick="solicitarNombre('ANGELES AZULES', 'como te voy a olvidar')"><label for="angelesazules4"> como te voy a olvidar</label></li>
+                </ul>
+            </div>
+            <img src="https://www.kebuena.com.mx/wp-content/uploads/2020/02/los-angeles-azules-nuevo-tema.jpg" alt="Angeles Azules">
+        </div>
+
+        <!-- ANTONIO RIOS -->
+        <div class="artist">
+            <div>
+                <h3>ANTONIO RIOS</h3>
+                <ul class="songs">
+                    <li><input type="radio" id="antoniorios1" name="song" value="nunca me faltes" onclick="solicitarNombre('ANTONIO RIOS', 'nunca me faltes')"><label for="antoniorios1"> nunca me faltes</label></li>
+                    <li><input type="radio" id="antoniorios2" name="song" value="yo me estoy enamorando" onclick="solicitarNombre('ANTONIO RIOS', 'yo me estoy enamorando')"><label for="antoniorios2"> yo me estoy enamorando</label></li>
+                </ul>
+            </div>
+            <img src="https://px.fotos.cdn.0223.com.ar/f/042023/1681220408293.webp?cw=748&ch=420&extw=jpg" alt="Antonio Rios">
+        </div>
+
+        <!-- AUTENTICOS DECADENTES -->
+        <div class="artist">
+            <div>
+                <h3>AUTENTICOS DECADENTES</h3>
+                <ul class="songs">
+                    <li><input type="radio" id="autenticodecadentes1" name="song" value="el murguero" onclick="solicitarNombre('AUTENTICO DECADENTES', 'el murguero')"><label for="autenticodecadentes1"> el murguero</label></li>
+                    <li><input type="radio" id="autenticodecadentes2" name="song" value="los piratas" onclick="solicitarNombre('AUTENTICO DECADENTES', 'los piratas')"><label for="autenticodecadentes2"> los piratas</label></li>
+                    <li><input type="radio" id="autenticodecadentes3" name="song" value="veni raquel" onclick="solicitarNombre('AUTENTICO DECADENTES', 'veni raquel')"><label for="autenticodecadentes3"> veni raquel</label></li>
+                </ul>
+            </div>
+            <img src="https://www.lavoz.com.ar/resizer/nx25twZpTW3Mmu3bLfl5qKGylEY=/0x0:0x0/980x640/filters:quality(80):format(webp)/cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/KWWXLYW5NNGT7DZZYH4EPFDJYU.JPG" alt="Autentico Decadentes">
+        </div>
+
+<!-- BANDA 21 -->
+<div class="artist">
+    <div>
+        <h3>BANDA 21</h3>
+        <ul class="songs">
+            <li><input type="radio" id="banda21_1" name="song" value="que bonito" onclick="solicitarNombre('BANDA 21', 'que bonito')"><label for="banda21_1"> que bonito</label></li>
+            <li><input type="radio" id="banda21_2" name="song" value="eso duele" onclick="solicitarNombre('BANDA 21', 'eso duele')"><label for="banda21_2"> eso duele</label></li>
+        </ul>
+    </div>
+    <img src="https://robertoramasso.com/contrataciones/contrataciones-banda-21.jpg" alt="Banda 21">
+</div>
+
+<!-- CACHO CASTAÑA -->
+<div class="artist">
+    <div>
+        <h3>CACHO CASTAÑA</h3>
+        <ul class="songs">
+            <li><input type="radio" id="cachocastana1" name="song" value="ojala que no puedas" onclick="solicitarNombre('CACHO CASTAÑA', 'ojala que no puedas')"><label for="cachocastana1"> ojala que no puedas</label></li>
+            <li><input type="radio" id="cachocastana2" name="song" value="el matador" onclick="solicitarNombre('CACHO CASTAÑA', 'el matador')"><label for="cachocastana2"> el matador</label></li>
+        </ul>
+    </div>
+    <img src="https://resizer.iproimg.com/unsafe/1280x/filters:format(webp)/https://assets.iprofesional.com/assets/jpg/2020/10/505213.jpg" alt="Cacho Castaña">
+</div>
+
+<!-- CAE -->
+<div class="artist">
+    <div>
+        <h3>CAE</h3>
+        <ul class="songs">
+            <li><input type="radio" id="cae1" name="song" value="te recuerdo" onclick="solicitarNombre('CAE', 'te recuerdo')"><label for="cae1"> te recuerdo</label></li>
+            <li><input type="radio" id="cae2" name="song" value="desierto sin amor" onclick="solicitarNombre('CAE', 'desierto sin amor')"><label for="cae2"> desierto sin amor</label></li>
+        </ul>
+    </div>
+    <img src="https://diariohoynet.nyc3.cdn.digitaloceanspaces.com/adjuntos/galerias/000/375/0000375788.jpg" alt="CAE">
+</div>
+
+<!-- CAMILO -->
+<div class="artist">
+    <div>
+        <h3>CAMILO</h3>
+        <ul class="songs">
+            <li><input type="radio" id="camilo1" name="song" value="vida de rico" onclick="solicitarNombre('CAMILO', 'vida de rico')"><label for="camilo1"> vida de rico</label></li>
+        </ul>
+    </div>
+    <img src="https://resizer.glanacion.com/resizer/v2/camilo-echeverry-dio-un-consejo-para-verse-guapo-NF2HF4HY3NHCTNSC4IOHZRUNOM.jpg?auth=f47b3580b92fbb699bdfceae799b6f5bd671419e4504f7be8367c8b81a26d232&width=880&height=586&quality=70&smart=true" alt="Camilo">
+</div>
+
+<!-- CARLOS BAUTE -->
+<div class="artist">
+    <div>
+        <h3>CARLOS BAUTE</h3>
+        <ul class="songs">
+            <li><input type="radio" id="carlosbaute1" name="song" value="te regalo" onclick="solicitarNombre('CARLOS BAUTE', 'te regalo')"><label for="carlosbaute1"> te regalo</label></li>
+        </ul>
+    </div>
+    <img src="https://www.culturasenlibertad.com.ar/wp-content/uploads/2022/04/16488891202066.jpg" alt="Carlos Baute">
+</div>
+
+<!-- CARLOS VIVES -->
+<div class="artist">
+    <div>
+        <h3>CARLOS VIVES</h3>
+        <ul class="songs">
+            <li><input type="radio" id="carlosvives1" name="song" value="la bicicleta" onclick="solicitarNombre('CARLOS VIVES', 'la bicicleta')"><label for="carlosvives1"> la bicicleta</label></li>
+            <li><input type="radio" id="carlosvives2" name="song" value="volvi a nacer" onclick="solicitarNombre('CARLOS VIVES', 'volvi a nacer')"><label for="carlosvives2"> volvi a nacer</label></li>
+        </ul>
+    </div>
+    <img src="https://www.billboard.com/wp-content/uploads/2023/08/players-carlos-vives-billboard-2023-bb11-1-del-vecchio-1260.jpg?w=1260&h=840&crop=1" alt="Carlos Vives">
+</div>
+
+<!-- CHAYANNE -->
+<div class="artist">
+    <div>
+        <h3>CHAYANNE</h3>
+        <ul class="songs">
+            <li><input type="radio" id="chayanne1" name="song" value="provocame" onclick="solicitarNombre('CHAYANNE', 'provocame')"><label for="chayanne1"> provocame</label></li>
+            <li><input type="radio" id="chayanne2" name="song" value="y tu te vas" onclick="solicitarNombre('CHAYANNE', 'y tu te vas')"><label for="chayanne2"> y tu te vas</label></li>
+        </ul>
+    </div>
+    <img src="https://www.mmx.com.ar/wp-content/uploads/2023/09/a16924a5a158c66608b009460f8e63dd.jpg" alt="Chayanne">
+</div>
+
+<!-- CHINO Y NACHO -->
+<div class="artist">
+    <div>
+        <h3>CHINO Y NACHO</h3>
+        <ul class="songs">
+            <li><input type="radio" id="chinoynacho1" name="song" value="andas en mi cabeza" onclick="solicitarNombre('CHINO Y NACHO', 'andas en mi cabeza')"><label for="chinoynacho1"> andas en mi cabeza</label></li>
+            <li><input type="radio" id="chinoynacho2" name="song" value="mi niña bonita" onclick="solicitarNombre('CHINO Y NACHO', 'mi niña bonita')"><label for="chinoynacho2"> mi niña bonita</label></li>
+        </ul>
+    </div>
+    <img src="https://articles-img.sftcdn.net/t_article_cover_xl/auto-mapping-folder/sites/2/2023/05/Chino-y-Nacho-en-HD.jpg" alt="Chino y Nacho">
+</div>
+
+<!-- CRISTIAN CASTRO -->
+<div class="artist">
+    <div>
+        <h3>CRISTIAN CASTRO</h3>
+        <ul class="songs">
+            <li><input type="radio" id="cristiancastro1" name="song" value="azul" onclick="solicitarNombre('CRISTIAN CASTRO', 'azul')"><label for="cristiancastro1"> azul</label></li>
+            <li><input type="radio" id="cristiancastro2" name="song" value="es mejor asi" onclick="solicitarNombre('CRISTIAN CASTRO', 'es mejor asi')"><label for="cristiancastro2"> es mejor asi</label></li>
+            <li><input type="radio" id="cristiancastro3" name="song" value="no podras" onclick="solicitarNombre('CRISTIAN CASTRO', 'no podras')"><label for="cristiancastro3"> no podras</label></li>
+            <li><input type="radio" id="cristiancastro4" name="song" value="lloviendo estrellas" onclick="solicitarNombre('CRISTIAN CASTRO', 'lloviendo estrellas')"><label for="cristiancastro4"> lloviendo estrellas</label></li>
+        </ul>
+    </div>
+    <img src="https://ort.com.mx/wp-content/uploads/2019/09/cc-1.jpg" alt="Cristian Castro">
+</div>
+
+<!-- FABIANA CANTILO -->
+<div class="artist">
+    <div>
+        <h3>FABIANA CANTILO</h3>
+        <ul class="songs">
+            <li><input type="radio" id="fabianacantilo1" name="song" value="mary poppins" onclick="solicitarNombre('FABIANA CANTILO', 'mary poppins')"><label for="fabianacantilo1"> mary poppins</label></li>
+            <li><input type="radio" id="fabianacantilo2" name="song" value="mi enfermedad" onclick="solicitarNombre('FABIANA CANTILO', 'mi enfermedad')"><label for="fabianacantilo2"> mi enfermedad</label></li>
+        </ul>
+    </div>
+    <img src="https://www.latercera.com/resizer/zjkPM-h6WHk_b9-P04daoML-z1c=/900x600/smart/arc-anglerfish-arc2-prod-copesa.s3.amazonaws.com/public/2SMSJOG5T5CR5BUCFY3VDHYGQI.jpg" alt="Fabiana Cantilo">
+</div>
+
+<!-- GILDA -->
+<div class="artist">
+    <div>
+        <h3>GILDA</h3>
+        <ul class="songs">
+            <li><input type="radio" id="gilda1" name="song" value="fuiste" onclick="solicitarNombre('GILDA', 'fuiste')"><label for="gilda1"> fuiste</label></li>
+            <li><input type="radio" id="gilda2" name="song" value="no me arrepiento de este amor" onclick="solicitarNombre('GILDA', 'no me arrepiento de este amor')"><label for="gilda2"> no me arrepiento de este amor</label></li>
+            <li><input type="radio" id="gilda3" name="song" value="paisaje" onclick="solicitarNombre('GILDA', 'paisaje')"><label for="gilda3"> paisaje</label></li>
+            <li><input type="radio" id="gilda4" name="song" value="se me ha perdido el corazon" onclick="solicitarNombre('GILDA', 'se me ha perdido el corazon')"><label for="gilda4"> se me ha perdido el corazon</label></li>
+        </ul>
+    </div>
+    <img src="https://tucumanalinstante.com.ar/wp-content/uploads/gilda-27-anos-de-su-muerte-2023.jpg" alt="Gilda">
+</div>
+
+<!-- JAF -->
+<div class="artist">
+    <div>
+        <h3>JAF</h3>
+        <ul class="songs">
+            <li><input type="radio" id="jaf1" name="song" value="maravillosa esta noche" onclick="solicitarNombre('JAF', 'maravillosa esta noche')"><label for="jaf1"> maravillosa esta noche</label></li>
+            <li><input type="radio" id="jaf2" name="song" value="por ti por mi" onclick="solicitarNombre('JAF', 'por ti por mi')"><label for="jaf2"> por ti por mi</label></li>
+            <li><input type="radio" id="jaf3" name="song" value="tal vez mañana brille el sol" onclick="solicitarNombre('JAF', 'tal vez mañana brille el sol')"><label for="jaf3"> tal vez mañana brille el sol</label></li>
+            <li><input type="radio" id="jaf4" name="song" value="todo mi amor" onclick="solicitarNombre('JAF', 'todo mi amor')"><label for="jaf4"> todo mi amor</label></li>
+        </ul>
+    </div>
+    <img src="https://diariohoynet.nyc3.cdn.digitaloceanspaces.com/adjuntos/galerias/000/350/0000350941.jpg" alt="JAF">
+</div>
+
+<!-- JAMBAO -->
+<div class="artist">
+    <div>
+        <h3>JAMBAO</h3>
+        <ul class="songs">
+            <li><input type="radio" id="jambao1" name="song" value="se parece mas a ti" onclick="solicitarNombre('JAMBAO', 'se parece mas a ti')"><label for="jambao1"> se parece mas a ti</label></li>
+        </ul>
+    </div>
+    <img src="https://www.sala-apolo.com/uploads/media/default/0001/07/thumb_6082_default_wide.jpeg" alt="Jambao">
+</div>
+
+<!-- KARINA -->
+<div class="artist">
+    <div>
+        <h3>KARINA</h3>
+        <ul class="songs">
+            <li><input type="radio" id="karina1" name="song" value="con la misma moneda" onclick="solicitarNombre('KARINA', 'con la misma moneda')"><label for="karina1"> con la misma moneda</label></li>
+            <li><input type="radio" id="karina2" name="song" value="corazon mentiroso" onclick="solicitarNombre('KARINA', 'corazon mentiroso')"><label for="karina2"> corazon mentiroso</label></li>
+            <li><input type="radio" id="karina3" name="song" value="fuera" onclick="solicitarNombre('KARINA', 'fuera')"><label for="karina3"> fuera</label></li>
+            <li><input type="radio" id="karina4" name="song" value="sinverguenza" onclick="solicitarNombre('KARINA', 'sinverguenza')"><label for="karina4"> sinverguenza</label></li>
+            <li><input type="radio" id="karina5" name="song" value="esa te dejo" onclick="solicitarNombre('KARINA', 'esa te dejo')"><label for="karina5"> esa te dejo</label></li>
+            <li><input type="radio" id="karina6" name="song" value="te quise olvidar" onclick="solicitarNombre('KARINA', 'te quise olvidar')"><label for="karina6"> te quise olvidar</label></li>
+        </ul>
+    </div>
+    <img src="https://www.ciudad.com.ar/resizer/Zaf4MwA0wbQn4YWM_DMglKl4V7g=/767x0/smart/filters:format(webp)/cloudfront-us-east-1.images.arcpublishing.com/artear/2WMBJ5Q5CJHYVFNAIXUXMGXXAQ.jpg" alt="Karina">
+</div>
+
+<!-- KE PERSONAJE -->
+<div class="artist">
+    <div>
+        <h3>KE PERSONAJE</h3>
+        <ul class="songs">
+            <li><input type="radio" id="kepersonaje1" name="song" value="ya no vuelvas" onclick="solicitarNombre('KE PERSONAJE', 'ya no vuelvas')"><label for="kepersonaje1"> ya no vuelvas</label></li>
+            <li><input type="radio" id="kepersonaje2" name="song" value="adios amor" onclick="solicitarNombre('KE PERSONAJE', 'adios amor')"><label for="kepersonaje2"> adios amor</label></li>
+            <li><input type="radio" id="kepersonaje3" name="song" value="oye mujer" onclick="solicitarNombre('KE PERSONAJE', 'oye mujer')"><label for="kepersonaje3"> oye mujer</label></li>
+            <li><input type="radio" id="kepersonaje4" name="song" value="otro dia mas" onclick="solicitarNombre('KE PERSONAJE', 'otro dia mas')"><label for="kepersonaje4"> otro dia mas</label></li>
+            <li><input type="radio" id="kepersonaje5" name="song" value="pobre corazon" onclick="solicitarNombre('KE PERSONAJE', 'pobre corazon')"><label for="kepersonaje5"> pobre corazon</label></li>
+            <li><input type="radio" id="kepersonaje6" name="song" value="ojitos rojos" onclick="solicitarNombre('KE PERSONAJE', 'ojitos rojos')"><label for="kepersonaje6"> ojitos rojos</label></li>
+            <li><input type="radio" id="kepersonaje7" name="song" value="como estas" onclick="solicitarNombre('KE PERSONAJE', 'como estas')"><label for="kepersonaje7"> como estas</label></li>
+            <li><input type="radio" id="kepersonaje8" name="song" value="justo a tiempo" onclick="solicitarNombre('KE PERSONAJE', 'justo a tiempo')"><label for="kepersonaje8"> justo a tiempo</label></li>
+            <li><input type="radio" id="kepersonaje9" name="song" value="mientes" onclick="solicitarNombre('KE PERSONAJE', 'mientes')"><label for="kepersonaje9"> mientes</label></li>
+            <li><input type="radio" id="kepersonaje10" name="song" value="que lloro" onclick="solicitarNombre('KE PERSONAJE', 'que lloro')"><label for="kepersonaje10"> que lloro</label></li>
+        </ul>
+    </div>
+    <img src="https://viapais.com.ar/resizer/P3zElW5mw5BWMBXyyJ56zpMnzzQ=/0x0:0x0/980x640/filters:quality(80):format(webp)/cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/2BS6QST2SJBSDMPVOAC6DTHBP4.jpg" alt="Ke Personaje">
+</div>
+
+<!-- LA KONGA -->
+<div class="artist">
+    <div>
+        <h3>LA KONGA</h3>
+        <ul class="songs">
+            <li><input type="radio" id="lakonga1" name="song" value="perfecta" onclick="solicitarNombre('LA KONGA', 'perfecta')"><label for="lakonga1"> perfecta</label></li>
+            <li><input type="radio" id="lakonga2" name="song" value="te mentiria" onclick="solicitarNombre('LA KONGA', 'te mentiria')"><label for="lakonga2"> te mentiria</label></li>
+            <li><input type="radio" id="lakonga3" name="song" value="universo paralelo" onclick="solicitarNombre('LA KONGA', 'universo paralelo')"><label for="lakonga3"> universo paralelo</label></li>
+            <li><input type="radio" id="lakonga4" name="song" value="el mismo aire" onclick="solicitarNombre('LA KONGA', 'el mismo aire')"><label for="lakonga4"> el mismo aire</label></li>
+            <li><input type="radio" id="lakonga5" name="song" value="ya no mas" onclick="solicitarNombre('LA KONGA', 'ya no mas')"><label for="lakonga5"> ya no mas</label></li>
+            <li><input type="radio" id="lakonga6" name="song" value="la cabaña" onclick="solicitarNombre('LA KONGA', 'la cabaña')"><label for="lakonga6"> la cabaña</label></li>
+        </ul>
+    </div>
+    <img src="https://www.miamihispano.com/wp-content/uploads/2024/03/La-Konga-en-Miami-2024.jpg" alt="La Konga">
+</div>
+
+<!-- LA NUEVA LUNA -->
+<div class="artist">
+    <div>
+        <h3>LA NUEVA LUNA</h3>
+        <ul class="songs">
+            <li><input type="radio" id="lanuevaluna1" name="song" value="y ahora te vas" onclick="solicitarNombre('LA NUEVA LUNA', 'y ahora te vas')"><label for="lanuevaluna1"> y ahora te vas</label></li>
+        </ul>
+    </div>
+    <img src="https://elterritorio1.cdn.net.ar/252/elterritorio1/images/22/04/220400_412710d1152f0f38144916a76277e2b439cf77d8989671cca659b8b5b8c7d7cc/md.webp" alt="La Nueva Luna">
+</div>
+
+<!-- LA T Y LA M -->
+<div class="artist">
+    <div>
+        <h3>LA T Y LA M</h3>
+        <ul class="songs">
+            <li><input type="radio" id="latylam1" name="song" value="no se va" onclick="solicitarNombre('LA T Y LA M', 'no se va')"><label for="latylam1"> no se va</label></li>
+            <li><input type="radio" id="latylam2" name="song" value="pa la seleccion" onclick="solicitarNombre('LA T Y LA M', 'pa la seleccion')"><label for="latylam2"> pa la seleccion</label></li>
+        </ul>
+    </div>
+    <img src="https://infosurdiario.com.ar/wp-content/uploads/2023/07/la-t-y-la-m-furor-en-internet.jpeg" alt="La T y La M">
+</div>
+
+<!-- LEO MATEOLI -->
+<div class="artist">
+    <div>
+        <h3>LEO MATEOLI</h3>
+        <ul class="songs">
+            <li><input type="radio" id="leomateoli1" name="song" value="le pido a dios" onclick="solicitarNombre('LEO MATEOLI', 'le pido a dios')"><label for="leomateoli1"> le pido a dios</label></li>
+            <li><input type="radio" id="leomateoli2" name="song" value="tan solo amantes" onclick="solicitarNombre('LEO MATEOLI', 'tan solo amantes')"><label for="leomateoli2"> tan solo amantes</label></li>
+            <li><input type="radio" id="leomateoli3" name="song" value="tramposa y mentirosa" onclick="solicitarNombre('LEO MATEOLI', 'tramposa y mentirosa')"><label for="leomateoli3"> tramposa y mentirosa</label></li>
+        </ul>
+    </div>
+    <img src="https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2019/08/10170653/Leo-Mattioli.jpg" alt="Leo Mateoli">
+</div>
+     <!-- L GANTE -->
+<div class="artist">
+    <div>
+        <h3>L GANTE</h3>
+        <ul class="songs">
+            <li><input type="radio" id="lgante1" name="song" value="perrito malvado" onclick="solicitarNombre('L GANTE', 'perrito malvado')"><label for="lgante1"> perrito malvado</label></li>
+            <li><input type="radio" id="lgante2" name="song" value="bar" onclick="solicitarNombre('L GANTE', 'bar')"><label for="lgante2"> bar</label></li>
+        </ul>
+    </div>
+    <img src="https://www.cronista.com/files/image/380/380432/6160b3ddef164.jpg" alt="L GANTE">
+</div>
+
+<!-- LOS CHARROS -->
+<div class="artist">
+    <div>
+        <h3>LOS CHARROS</h3>
+        <ul class="songs">
+            <li><input type="radio" id="loscharros1" name="song" value="si no te hubieras ido" onclick="solicitarNombre('LOS CHARROS', 'si no te hubieras ido')"><label for="loscharros1"> si no te hubieras ido</label></li>
+            <li><input type="radio" id="loscharros2" name="song" value="amores como el nuestro" onclick="solicitarNombre('LOS CHARROS', 'amores como el nuestro')"><label for="loscharros2"> amores como el nuestro</label></li>
+        </ul>
+    </div>
+    <img src="https://storage.lacapitalmdp.com/2022/07/charros1-1024x462.jpg" alt="Los Charros">
+</div>
+
+<!-- LOS PALMERAS -->
+<div class="artist">
+    <div>
+        <h3>LOS PALMERAS</h3>
+        <ul class="songs">
+            <li><input type="radio" id="lospalmeras1" name="song" value="bombon asesino" onclick="solicitarNombre('LOS PALMERAS', 'bombon asesino')"><label for="lospalmeras1"> bombon asesino</label></li>
+            <li><input type="radio" id="lospalmeras2" name="song" value="doble vida" onclick="solicitarNombre('LOS PALMERAS', 'doble vida')"><label for="lospalmeras2"> doble vida</label></li>
+            <li><input type="radio" id="lospalmeras3" name="song" value="el embrujo" onclick="solicitarNombre('LOS PALMERAS', 'el embrujo')"><label for="lospalmeras3"> el embrujo</label></li>
+        </ul>
+    </div>
+    <img src="https://comunidad.pami.org.ar/wp-content/uploads/2022/06/los-palmeras.jpg" alt="Los Palmeras">
+</div>
+
+<!-- LOS SULTANES -->
+<div class="artist">
+    <div>
+        <h3>LOS SULTANES</h3>
+        <ul class="songs">
+            <li><input type="radio" id="lossultanes1" name="song" value="estoy saliendo con un chabon" onclick="solicitarNombre('LOS SULTANES', 'estoy saliendo con un chabon')"><label for="lossultanes1"> estoy saliendo con un chabon</label></li>
+            <li><input type="radio" id="lossultanes2" name="song" value="el chupete" onclick="solicitarNombre('LOS SULTANES', 'el chupete')"><label for="lossultanes2"> el chupete</label></li>
+        </ul>
+    </div>
+    <img src="https://laagencia.biz/contratar/Los-Sultanes-en-laagencia.biz_.jpg" alt="Los Sultaness">
+</div>
+
+<!-- LUCK RA -->
+<div class="artist">
+    <div>
+        <h3>LUCK RA</h3>
+        <ul class="songs">
+            <li><input type="radio" id="luckra1" name="song" value="la morocha" onclick="solicitarNombre('LUCK RA', 'la morocha')"><label for="luckra1"> la morocha</label></li>
+            <li><input type="radio" id="luckra2" name="song" value="hola perdida" onclick="solicitarNombre('LUCK RA', 'hola perdida')"><label for="luckra2"> hola perdida</label></li>
+        </ul>
+    </div>
+    <img src="https://media.elobservador.com.uy/p/3adcabb0a30f1a226c1c7e0b10d389c8/adjuntos/362/imagenes/100/409/0100409367/1000x0/smart/1707394135790webp.webp" alt="Luck Ra">
+</div>
+
+<!-- MALUMA -->
+<div class="artist">
+    <div>
+        <h3>MALUMA</h3>
+        <ul class="songs">
+            <li><input type="radio" id="maluma1" name="song" value="hawai" onclick="solicitarNombre('MALUMA', 'hawai')"><label for="maluma1"> hawai</label></li>
+            <li><input type="radio" id="maluma2" name="song" value="11 pm" onclick="solicitarNombre('MALUMA', '11 pm')"><label for="maluma2"> 11 pm</label></li>
+            <li><input type="radio" id="maluma3" name="song" value="borro cassette" onclick="solicitarNombre('MALUMA', 'borro cassette')"><label for="maluma3"> borro cassette</label></li>
+            <li><input type="radio" id="maluma4" name="song" value="admv amor de mi vida" onclick="solicitarNombre('MALUMA', 'admv amor de mi vida')"><label for="maluma4"> admv amor de mi vida</label></li>
+        </ul>
+    </div>
+    <img src="https://belleza-estetica.com.ar/wp-content/uploads/2024/02/Quien-es-Maluma.jpg" alt="Maluma">
+</div>
+
+<!-- MANA -->
+<div class="artist">
+    <div>
+        <h3>MANA</h3>
+        <ul class="songs">
+            <li><input type="radio" id="mana1" name="song" value="rayando el sol" onclick="solicitarNombre('MANA', 'rayando el sol')"><label for="mana1"> rayando el sol</label></li>
+            <li><input type="radio" id="mana2" name="song" value="en el muelle de san blas" onclick="solicitarNombre('MANA', 'en el muelle de san blas')"><label for="mana2"> en el muelle de san blas</label></li>
+            <li><input type="radio" id="mana3" name="song" value="labios compartidos" onclick="solicitarNombre('MANA', 'labios compartidos')"><label for="mana3"> labios compartidos</label></li>
+            <li><input type="radio" id="mana4" name="song" value="vivir sin aire" onclick="solicitarNombre('MANA', 'vivir sin aire')"><label for="mana4"> vivir sin aire</label></li>
+            <li><input type="radio" id="mana5" name="song" value="oye mi amor" onclick="solicitarNombre('MANA', 'oye mi amor')"><label for="mana5"> oye mi amor</label></li>
+        </ul>
+    </div>
+    <img src="https://www.latinpopbrasil.com.br/wp-content/uploads/2018/04/Mana.jpg" alt="Mana">
+</div>
+
+
+<!-- MARAMA -->
+<div class="artist">
+    <div>
+        <h3>MARAMA</h3>
+        <ul class="songs">
+            <li><input type="radio" id="marama1" name="song" value="todo comenzo bailando" onclick="solicitarNombre('MARAMA', 'todo comenzo bailando')"><label for="marama1"> todo comenzo bailando</label></li>
+            <li><input type="radio" id="marama2" name="song" value="no te vallas" onclick="solicitarNombre('MARAMA', 'no te vallas')"><label for="marama2"> no te vallas</label></li>
+            <li><input type="radio" id="marama3" name="song" value="noche loca" onclick="solicitarNombre('MARAMA', 'noche loca')"><label for="marama3"> noche loca</label></li>
+        </ul>
+    </div>
+    <img src="https://diariohoynet.nyc3.cdn.digitaloceanspaces.com/adjuntos/galerias/000/281/0000281877.jpg" alt="Marama">
+</div>
+
+<!-- PABLO LEZCANO -->
+<div class="artist">
+    <div>
+        <h3>PABLO LEZCANO</h3>
+        <ul class="songs">
+            <li><input type="radio" id="pablolezcano1" name="song" value="no te creas tan importante" onclick="solicitarNombre('PABLO LEZCANO', 'no te creas tan importante')"><label for="pablolezcano1"> no te creas tan importante</label></li>
+            <li><input type="radio" id="pablolezcano2" name="song" value="me va a extrañar" onclick="solicitarNombre('PABLO LEZCANO', 'me va a extrañar')"><label for="pablolezcano2"> me va a extrañar</label></li>
+        </ul>
+    </div>
+    <img src="https://cloudfront-us-east-1.images.arcpublishing.com/copesa/P3CWXM7ZWZE6JHZ6MHM6OOT7TU.jpg" alt="Pablo Lezcano">
+</div>
+
+<!-- PAPPO -->
+<div class="artist">
+    <div>
+        <h3>PAPPO</h3>
+        <ul class="songs">
+            <li><input type="radio" id="pappo1" name="song" value="desconfio" onclick="solicitarNombre('PAPPO', 'desconfio')"><label for="pappo1"> desconfio</label></li>
+            <li><input type="radio" id="pappo2" name="song" value="juntos a la par" onclick="solicitarNombre('PAPPO', 'juntos a la par')"><label for="pappo2"> juntos a la par</label></li>
+            <li><input type="radio" id="pappo3" name="song" value="ruta 66" onclick="solicitarNombre('PAPPO', 'ruta 66')"><label for="pappo3"> ruta 66</label></li>
+            <li><input type="radio" id="pappo4" name="song" value="desconfio" onclick="solicitarNombre('PAPPO', 'desconfio')"><label for="pappo4"> desconfio</label></li>
+        </ul>
+    </div>
+    <img src="https://www.tiempoar.com.ar/wp-content/uploads/2021/05/9403e520dbbee4296942a840185a41eb_BIG.jpg" alt="Pappo">
+</div>
+
+<!-- PIMPINELA -->
+<div class="artist">
+    <div>
+        <h3>PIMPINELA</h3>
+        <ul class="songs">
+            <li><input type="radio" id="pimpinela1" name="song" value="a esa" onclick="solicitarNombre('PIMPINELA', 'a esa')"><label for="pimpinela1"> a esa</label></li>
+            <li><input type="radio" id="pimpinela2" name="song" value="hermanos" onclick="solicitarNombre('PIMPINELA', 'hermanos')"><label for="pimpinela2"> hermanos</label></li>
+        </ul>
+    </div>
+    <img src="https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2017/04/13161545/Pimpinela.jpg" alt="Pimpinela">
+</div>
+
+<!-- RAFAGA -->
+<div class="artist">
+    <div>
+        <h3>RAFAGA</h3>
+        <ul class="songs">
+            <li><input type="radio" id="rafaga1" name="song" value="mentirosa" onclick="solicitarNombre('RAFAGA', 'mentirosa')"><label for="rafaga1"> mentirosa</label></li>
+            <li><input type="radio" id="rafaga2" name="song" value="una cerveza" onclick="solicitarNombre('RAFAGA', 'una cerveza')"><label for="rafaga2"> una cerveza</label></li>
+        </ul>
+    </div>
+    <img src="https://i0.wp.com/tinformas.com/wp-content/uploads/2022/07/Rafaga.jpg?fit=1200%2C802&ssl=1" alt="Rafaga">
+</div>
+
+<!-- RICARDO MONTANER -->
+<div class="artist">
+    <div>
+        <h3>RICARDO MONTANER</h3>
+        <ul class="songs">
+            <li><input type="radio" id="montaner1" name="song" value="me va a extrañar" onclick="solicitarNombre('RICARDO MONTANER', 'me va a extrañar')"><label for="montaner1"> me va a extrañar</label></li>
+            <li><input type="radio" id="montaner2" name="song" value="tan enamorado" onclick="solicitarNombre('RICARDO MONTANER', 'tan enamorado')"><label for="montaner2"> tan enamorado</label></li>
+        </ul>
+    </div>
+    <img src="https://media.lmneuquen.com/p/b6d6a475a10f4ccbcfca49ae2d8a900e/adjuntos/195/imagenes/007/290/0007290352/770x0/smart/ricardo-montanerjpg.jpg" alt="Ricardo Montaner">
+</div>
+
+<!-- ROMBAI -->
+<div class="artist">
+    <div>
+        <h3>ROMBAI</h3>
+        <ul class="songs">
+            <li><input type="radio" id="rombai1" name="song" value="locura contigo" onclick="solicitarNombre('ROMBAI', 'locura contigo')"><label for="rombai1"> locura contigo</label></li>
+            <li><input type="radio" id="rombai2" name="song" value="cuando se pone a bailar" onclick="solicitarNombre('ROMBAI', 'cuando se pone a bailar')"><label for="rombai2"> cuando se pone a bailar</label></li>
+        </ul>
+    </div>
+    <img src="https://fotos.perfil.com/2016/11/01/trim/1280/720/rombai-2.jpg" alt="Rombai">
+</div>
+
+<!-- TAMBO TAMBO -->
+<div class="artist">
+    <div>
+        <h3>TAMBO TAMBO</h3>
+        <ul class="songs">
+            <li><input type="radio" id="tambotambo1" name="song" value="la cumbita" onclick="solicitarNombre('TAMBO TAMBO', 'la cumbita')"><label for="tambotambo1"> la cumbita</label></li>
+        </ul>
+    </div>
+    <img src="https://laagencia.biz/contratar/Contratar-Tambo-Tambo.jpg" alt="Tambo Tambo">
+</div>
+
+<!-- ULISES BUENO -->
+<div class="artist">
+    <div>
+        <h3>ULISES BUENO</h3>
+        <ul class="songs">
+            <li><input type="radio" id="ulisesbueno1" name="song" value="intento" onclick="solicitarNombre('ULISES BUENO', 'intento')"><label for="ulisesbueno1"> intento</label></li>
+        </ul>
+    </div>
+    <img src="https://media.a24.com/p/2d43c345ad820caf342a9f82a1fff897/adjuntos/296/imagenes/009/253/0009253847/1200x675/smart/sin-titulopng.png" alt="Ulises Bueno">
+</div>
+
+<!-- WALTER OLMOS -->
+<div class="artist">
+    <div>
+        <h3>WALTER OLMOS</h3>
+        <ul class="songs">
+            <li><input type="radio" id="walterolmos1" name="song" value="por lo que yo te quiero" onclick="solicitarNombre('WALTER OLMOS', 'por lo que yo te quiero')"><label for="walterolmos1"> por lo que yo te quiero</label></li>
+        </ul>
+    </div>
+    <img src="https://media.minutouno.com/p/71289f049434cd31afaee76a636d5209/adjuntos/150/imagenes/027/671/0027671263/610x0/smart/walter-olmos-56.png" alt="Walter Olmos">
+</div>
+
+
+        <!-- Campo oculto para almacenar el nombre -->
+        <input type="hidden" id="nombreUsuario" name="nombreUsuario">
+    </form>
+
+    <script>
+        function solicitarNombre(artista, cancion) {
+            var nombre = prompt("Por favor, ingresa tu nombre:");
+            if (nombre != null && nombre != "") {
+                // Almacenar el nombre en un campo oculto
+                document.getElementById("nombreUsuario").value = nombre;
+                enviarCorreo(nombre, artista, cancion);
+            }
+        }
+
+        function enviarCorreo(nombre, artista, cancion) {
+            var cuerpoCorreo = "Nombre: " + nombre + "\nArtista: " + artista + "\nCanción votada: " + cancion;
+            window.location.href = "mailto:emacantobarkaraoke@gmail.com?subject=Votos de Karaoke&body=" + encodeURIComponent(cuerpoCorreo);
+        }
+    </script>
+</body>
+</html>
